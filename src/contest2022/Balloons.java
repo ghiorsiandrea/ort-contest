@@ -25,16 +25,16 @@ public class Balloons {
         pw.close();
     }
 
-    public static void processCase(Scanner sc, PrintWriter pw, int nCase) throws IOException {
+    public static void processCase(Scanner sc2, PrintWriter pw2, int nCase2) throws IOException {
 
         // lee un cases entero del archivo
-        String[] costs = sc.nextLine().split(" ");
+        String[] costs = sc2.nextLine().split(" ");
         int greenCost = Integer.parseInt(costs[0]);
         int purpleCost = Integer.parseInt(costs[1]);
         int biggerCost = Math.max(greenCost, purpleCost);
         int smallestCost = Math.min(greenCost, purpleCost);
-        int participants = sc.nextInt();
-        sc.nextLine();
+        int participants = sc2.nextInt();
+        sc2.nextLine();
         int total1Left = 0;
         int total1Rigth = 0;
         int iLeft;
@@ -42,7 +42,7 @@ public class Balloons {
 
 
         for (int i = 1; i < participants + 1; i++) {
-            String[] iresults = sc.nextLine().split(" ");
+            String[] iresults = sc2.nextLine().split(" ");
             iLeft = Integer.parseInt(iresults[0]);
             iRigth = Integer.parseInt(iresults[1]);
             if (iLeft == 1) {
@@ -57,6 +57,6 @@ public class Balloons {
         int minimumCost = max1 * smallestCost + min1 * biggerCost;
 
         // ejemplo de grabar ese cases en el archivo de salida:
-        pw.println("Case #" + nCase + ": " + minimumCost);
+        pw2.println("Case #" + nCase2 + ": " + minimumCost);
     }
 }
